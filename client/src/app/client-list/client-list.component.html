@@ -1,0 +1,16 @@
+<p>client-list works!</p>
+<label>
+    Client List:
+</label>
+
+<div class="clientList">
+    <ul>
+        <li *ngFor="let client of clientList">
+            <button id={{client.name}} (click)="onSelect(client.name)">Email them</button>
+            {{ client.name }}
+        </li>
+    </ul>
+</div>
+<div class="emailList">
+
+</div>
