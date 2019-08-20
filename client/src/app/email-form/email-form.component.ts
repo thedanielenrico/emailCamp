@@ -14,7 +14,7 @@ export class EmailFormComponent implements OnInit {
   success = false;
   submitted = false;
 
-  // clients = ['ashley', 'jake', 'steven', 'alex', 'daniel'];
+
 
   constructor(private formBuilder: FormBuilder) {
     this.emailForm = this.formBuilder.group({

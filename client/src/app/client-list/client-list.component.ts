@@ -33,10 +33,14 @@ export class ClientListComponent implements OnInit {
 
   constructor() { }
 
+  
   onSelect(name) {
-    console.log(name)
-    const result = this.clientList.filter(person => person.name == name)
-    console.log(result)
+    this.clientList.filter(person => person.name == name ? person.selected = true : person )
+  }
+
+
+  onRemove(name){
+    this.clientList.filter(person => person.name == name ? person.selected = false : person )
   }
 
   ngOnInit() {
