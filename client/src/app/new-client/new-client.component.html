@@ -1,0 +1,14 @@
+<h4>
+    Add New Client
+</h4>
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()">
+    <label>
+        Client Name:
+        <input formControlName="clientName" type="text">
+    </label>
+    <label>
+        Client Email:
+        <input formControlName="clientEmail" type="email">
+    </label>
+</form>
+<button (click)="onSubmit()">Add new client</button>

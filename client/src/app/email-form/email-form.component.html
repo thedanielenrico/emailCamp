@@ -1,6 +1,36 @@
 <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
     <h4 *ngIf="success">Email sent!</h4>
-    <app-client-list></app-client-list>
+
+    <div id="clientList">
+        <h4>
+            Client List:
+        </h4>
+        <ul>
+            <li *ngFor="let client of clientList">
+                <div *ngIf="!client.selected">
+                    <button id={{client.name}} (click)="onSelect(client.name)">Email them</button>
+                    {{ client.name }}
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="submitted && emailForm.controls.emailBody.errors" class="errors">
+        <div *ngIf="emailForm.controls.emailBody.errors.required">Please pick an email recipient</div>
+    </div>
+    <div id="emailList">
+        <h4>
+            Email List:
+        </h4>
+        <ul>
+            <li *ngFor="let client of clientList">
+                <div *ngIf="client.selected">
+                    <button id={{client.name}} (click)="onRemove(client.name)">Remove</button>
+                    {{ client.name }}
+                </div>
+            </li>
+        </ul>
+    </div>
+
     <label>
         Email:
         <textarea formControlName="emailBody"></textarea>
