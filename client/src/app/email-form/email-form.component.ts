@@ -19,6 +19,7 @@ export class EmailFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {
     this.emailForm = this.formBuilder.group({
       emailBody: ['', Validators.required],
+
     })
     
   }
@@ -31,6 +32,39 @@ export class EmailFormComponent implements OnInit {
       console.log("Good job!")
       this.success = true;
     }
+  }
+  clientList = [
+    {
+      name: 'ashley',
+      selected: false,
+    },
+    {
+      name: 'jake',
+      selected: false,
+    },
+    {
+      name: 'steven',
+      selected: false,
+
+    },
+    {
+      name: 'alex',
+      selected: false,
+    },
+    {
+      name: 'daniel',
+      selected: false,
+    },
+  ]
+
+  
+  onSelect(name) {
+    this.clientList.filter(person => person.name == name ? person.selected = true : person )
+  }
+
+
+  onRemove(name){
+    this.clientList.filter(person => person.name == name ? person.selected = false : person )
   }
 
   ngOnInit() {

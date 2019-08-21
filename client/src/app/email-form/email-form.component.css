@@ -1,0 +1,11 @@
+li {
+    list-style-type: none;
+}
+#emailList {
+    float: right;
+    width: 50%;
+}
+#clientList {
+    width: 50%;
+    margin-right: 0;
+}
