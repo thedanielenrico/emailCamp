@@ -25,7 +25,7 @@ export class TemplatesComponent implements OnInit {
 
   }
 
-  templates: [
+  templates = [
     {
       body: "sa;sdfkljas;s",
       subject: "Number One"
