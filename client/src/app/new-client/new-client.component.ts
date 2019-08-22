@@ -25,13 +25,13 @@ export class NewClientComponent implements OnInit {
 
   }
   onSubmit() {
-    // this.submitted = true;
-    // if (this.clientForm.invalid) {
-    //   return;
-    // } else {
-    //   console.log("Good job!")
-    //   this.success = true;
-    // }
+    this.submitted = true;
+    if (this.clientForm.invalid) {
+      return;
+    } else {
+      console.log("Good job!")
+      this.success = true;
+    }
     console.log(this.clientForm.value)
   }
 
