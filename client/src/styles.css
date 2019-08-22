@@ -20,3 +20,7 @@ table {
   tr:nth-child(even) {
     background-color: #dddddd;
   }
+  textarea {
+    width: 200px;
+    height: 100px;
+  }
