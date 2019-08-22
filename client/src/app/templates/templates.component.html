@@ -1,1 +1,23 @@
-<p>templates works!</p>
+<div id="template">
+    <form [formGroup]="emailTemplate" (ngSubmit)="onSubmit()">
+        <h4 *ngIf="success">Email template saved!</h4>
+        <label>
+            Subject:
+            <input formControlName="emailSubject">
+            <div *ngIf="submitted && emailTemplate.controls.emailSubject.errors">
+                <div *ngIf="emailTemplate.controls.emailSubject.errors.required">Please add a subject line</div>
+            </div>
+        </label>
+        <br>
+        <label>
+            Template Body:
+            <br>
+            <textarea formControlName="emailTemplateBody"></textarea>
+            <div *ngIf="submitted && emailTemplate.controls.emailTemplateBody.errors" class="errors">
+                <div *ngIf="emailTemplate.controls.emailTemplateBody.errors.required">Please fill out the template body
+                </div>
+            </div>
+        </label>
+    </form>
+    <button (click)="onSubmit()">Submit</button>
+</div>

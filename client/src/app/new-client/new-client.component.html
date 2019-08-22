@@ -5,10 +5,16 @@
     <label>
         Client Name:
         <input formControlName="clientName" type="text">
+        <div *ngIf="submitted && clientForm.controls.clientName.errors" class="errors">
+            <div *ngIf="clientForm.controls.clientName.errors.required">Please add email address</div>
+        </div>
     </label>
     <label>
         Client Email:
         <input formControlName="clientEmail" type="email">
+        <div *ngIf="submitted && clientForm.controls.clientEmail.errors" class="errors">
+            <div *ngIf="clientForm.controls.clientEmail.errors.required">Please add email address</div>
+        </div>
     </label>
 </form>
 <button (click)="onSubmit()">Add new client</button>
