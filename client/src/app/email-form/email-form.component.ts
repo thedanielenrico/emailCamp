@@ -13,7 +13,7 @@ export class EmailFormComponent implements OnInit {
 
   success = false;
   submitted = false;
-
+  selected = 0;
 
 
   constructor(private formBuilder: FormBuilder) {
@@ -26,7 +26,7 @@ export class EmailFormComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    if (this.emailForm.invalid) {
+    if (this.emailForm.invalid && this.selected === 0) {
       return;
     } else {
       console.log("Good job!")
@@ -60,11 +60,16 @@ export class EmailFormComponent implements OnInit {
   
   onSelect(name) {
     this.clientList.filter(person => person.name == name ? person.selected = true : person )
+    this.selected += 1;
+    console.log(this.selected)
   }
 
 
   onRemove(name){
     this.clientList.filter(person => person.name == name ? person.selected = false : person )
+    this.selected -= 1;
+    console.log(this.selected)
+
   }
 
   ngOnInit() {
