@@ -14,7 +14,7 @@
             </li>
         </ul>
     </div>
-    <div *ngIf="submitted && emailForm.controls.emailBody.errors" class="errors">
+    <div *ngIf="!selected && emailForm.controls.emailBody.errors" class="errors">
         <div *ngIf="emailForm.controls.emailBody.errors.required">Please pick an email recipient</div>
     </div>
     <div id="emailList">

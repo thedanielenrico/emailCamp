@@ -27,15 +27,15 @@ export class TemplatesComponent implements OnInit {
 
   templates = [
     {
-      body: "sa;sdfkljas;s",
+      body: "test123",
       subject: "Number One"
     },
     {
-      body: "sa;sdfkljas;s",
+      body: "test123",
       subject: "Number Two"
     },
     {
-      body: "sa;sdfkljas;s",
+      body: "test123",
       subject: "Number Three"
     },
 
